@@ -63,7 +63,7 @@
         else if ([value isEqualToString:@"wisky"]){
             [dict setObject: stringDisWisky forKey:@"discr"];
         }
-        else if ([value isEqualToString:@"boorbon"]){
+        else if ([value isEqualToString:@"wisky"]){
             [dict setObject: stringDisBoorbon forKey:@"discr"];
         }
         else if ([value isEqualToString:@"b52"]){
@@ -103,7 +103,7 @@
     }
     cell.valueLabel.text = [[self.arrayM objectAtIndex:indexPath.row]objectForKey:@"value"];
     cell.pricesLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"price"];
-    cell.fortresLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"fortes"];
+    cell.fortresLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"fortres"];
     cell.titleLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"title"];
     
     return cell;
@@ -111,7 +111,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndex: (NSIndexPath *) indexPath
 {
-    DetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
+DetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
     
     NSDictionary * dict = [self.arrayM objectAtIndex:indexPath.row];
     

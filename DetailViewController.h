@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descrTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *DetailImageView;
 
 @end

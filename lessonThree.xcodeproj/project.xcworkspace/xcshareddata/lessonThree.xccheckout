@@ -12,20 +12,24 @@
 	<dict>
 		<key>7781D9DC9AB16DE21E5ABAE24AD0163133FDA3BC</key>
 		<string>https://github.com/YaSergey/lessonThree.git</string>
+		<key>FF95FBDB2F1571F6815B847B474EA522BE889114</key>
+		<string>https://github.com/YaSergey/lessonThree-cde1fe6854fbb50f7daf9bcf9441bcc496e5ae0d.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>lessonThree.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7781D9DC9AB16DE21E5ABAE24AD0163133FDA3BC</key>
+		<string>../../../lessonThree</string>
+		<key>FF95FBDB2F1571F6815B847B474EA522BE889114</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/YaSergey/lessonThree.git</string>
+	<string>https://github.com/YaSergey/lessonThree-cde1fe6854fbb50f7daf9bcf9441bcc496e5ae0d.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7781D9DC9AB16DE21E5ABAE24AD0163133FDA3BC</string>
+	<string>FF95FBDB2F1571F6815B847B474EA522BE889114</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>7781D9DC9AB16DE21E5ABAE24AD0163133FDA3BC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>lessonThree</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FF95FBDB2F1571F6815B847B474EA522BE889114</string>
+			<key>IDESourceControlWCCName</key>
+			<string>lessonThree-cde1fe6854fbb50f7daf9bcf9441bcc496e5ae0d</string>
 		</dict>
 	</array>
 </dict>
