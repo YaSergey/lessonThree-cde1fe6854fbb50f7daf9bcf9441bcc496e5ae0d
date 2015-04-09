@@ -63,9 +63,10 @@
         else if ([value isEqualToString:@"wisky"]){
             [dict setObject: stringDisWisky forKey:@"discr"];
         }
-        else if ([value isEqualToString:@"wisky"]){
+        else if ([value isEqualToString:@"boorbon"]){
             [dict setObject: stringDisBoorbon forKey:@"discr"];
         }
+      
         else if ([value isEqualToString:@"b52"]){
             [dict setObject: stringDisB52 forKey:@"discr"];
         }
@@ -105,11 +106,12 @@
     cell.pricesLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"price"];
     cell.fortresLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"fortres"];
     cell.titleLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"title"];
-    
+//    cell.cellImageView.image = [[self.arrayM objectAtIndex: indexPath.row]
+//        objectAtIndex:@"value"];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndex: (NSIndexPath *) indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
 DetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
     

@@ -10,13 +10,13 @@
 
 @interface DetailViewController : UIViewController
 
-@property (weak, nonatomic) NSString *string_valueLabel;
-@property (weak, nonatomic) NSString *string_priceLabel;
-@property (weak, nonatomic) NSString *string_descrTextView;
+@property (strong, nonatomic) NSString *string_valueLabel;
+@property (strong, nonatomic) NSString *string_priceLabel;
+@property (strong, nonatomic) NSString *string_descrTextView;
 
-@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UITextView *descrTextView;
-@property (weak, nonatomic) IBOutlet UIImageView *DetailImageView;
+@property (strong, nonatomic) IBOutlet UILabel *valueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
+@property (strong, nonatomic) IBOutlet UITextView *descrTextView;
+@property (strong, nonatomic) IBOutlet UIImageView *DetailImageView;
 
 @end

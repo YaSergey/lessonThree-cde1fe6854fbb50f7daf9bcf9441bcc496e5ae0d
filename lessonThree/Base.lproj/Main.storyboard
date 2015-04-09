@@ -64,7 +64,6 @@
                                             <outlet property="pricesLabel" destination="0DS-N5-A43" id="p7M-tb-FJQ"/>
                                             <outlet property="titleLabel" destination="zZJ-qG-6WL" id="4O7-hm-5gH"/>
                                             <outlet property="valueLabel" destination="KO6-Ug-VmQ" id="LS9-hl-Bk6"/>
-                                            <segue destination="PEz-VF-Pvv" kind="push" id="qKl-TU-kJk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
