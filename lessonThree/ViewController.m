@@ -27,7 +27,7 @@
     
     NSString * stringValues = @"cola,pepsi,wisky,boorbon,b52";
     NSString * stringPrices = @"100,120,300,400,600";
-    NSString * stringFortres = @"0,0,40,38,20";
+    NSString * stringFortres = @"без алкогольный,безалкогольный,крепкий,крепкий,средний";
     NSString * stringTitle = @"drink coke напитки компании кокакола производятся в америке как поило для идиотовв,бери от жизни все а когда нечего брать бери пепси,два по 50 лучший варинат для соблазнения ,ален делон не пьет адеколон он пьет двойной бурбон,даже и не думай брать эту гадость";
     
     NSString *stringDisCola = @"Напиток «Кока-кола» был придуман в Атланте (штат Джорджия, США) 8 мая 1886 года фармацевтом Джоном Ститом Пембертоном — бывшим офицером американской Армии конфедерации (есть легенда, что его придумал фермер, который продал свой рецепт Джону Ститу за 250 $, о чём Джон Стит якобы сказал в одном из своих интервью). Название для нового напитка придумал бухгалтер Пембертона — Фрэнк Робинсон, который также, владея каллиграфией, написал слова «Coca-Cola» фигурными буквами, до сих пор являющимися логотипом напитка";
@@ -47,12 +47,11 @@
     for (int i=0; i < self.arrayPrices.count; i++) {
         
         NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-    [dict setObject:[self.arrayPrices objectAtIndex: i] forKey:@"price"];
-    [dict setObject:[self.arrayValues objectAtIndex: i] forKey:@"value"];
-    [dict setObject:[self.arrayFortres objectAtIndex: i] forKey:@"value"];
-    [dict setObject:[self.arrayTitle objectAtIndex: i] forKey:@"fortres"];
-    [dict setObject:[self.arrayValues objectAtIndex: i] forKey:@"title"];
-
+    [dict setObject:[self.arrayPrices objectAtIndex:   i] forKey:@"price"];
+    [dict setObject:[self.arrayValues objectAtIndex:   i] forKey:@"value"];
+    [dict setObject:[self.arrayFortres objectAtIndex:  i] forKey:@"fortres"];
+    [dict setObject:[self.arrayTitle objectAtIndex:    i] forKey:@"title"];
+    
         NSString * value = [self.arrayValues objectAtIndex:i];
         
         if ([value isEqualToString:@"cola"]) {
@@ -91,7 +90,6 @@
 }
 
 
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"imageCell";
@@ -103,10 +101,10 @@
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier: simpleTableIdentifier];
     }
-    cell.valueLabel.text = [[self.arrayValues objectAtIndex:indexPath.row]objectForKey:@"value"];
-    cell.pricesLabel.text = [[self.arrayPrices objectAtIndex: indexPath.row]objectForKey:@"price"];
-     cell.fortresLabel.text = [[self.arrayFortres objectAtIndex: indexPath.row]objectForKey:@"fortes"];
-     cell.titleLabel.text = [[self.arrayTitle objectAtIndex: indexPath.row]objectForKey:@"title"];
+    cell.valueLabel.text = [[self.arrayM objectAtIndex:indexPath.row]objectForKey:@"value"];
+    cell.pricesLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"price"];
+    cell.fortresLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"fortes"];
+    cell.titleLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"title"];
     
     return cell;
 }
@@ -125,7 +123,7 @@ detail.string_descrTextView  = [dict objectForKey:@"discr"];
     [self.navigationController pushViewController:detail animated:YES];
 
     
-//    NSLog(@"indexPath %i", indexPath.row);
+ NSLog(@"indexPath %i", indexPath.row);
 
 }
     
