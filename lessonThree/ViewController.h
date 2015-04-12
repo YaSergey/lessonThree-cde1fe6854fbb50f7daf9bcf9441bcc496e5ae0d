@@ -10,5 +10,7 @@
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, assign) BOOL isFirstArray;
+
 
 @end

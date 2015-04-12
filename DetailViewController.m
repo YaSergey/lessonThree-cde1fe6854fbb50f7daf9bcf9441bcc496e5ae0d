@@ -10,6 +10,10 @@
 
 @interface DetailViewController ()
 
+- (IBAction)back:(id)sender;
+
+
+
 @end
 
 @implementation DetailViewController
@@ -20,20 +24,6 @@
     self.valueLabel.text = self.string_valueLabel;
     self.priceLabel.text = [NSString stringWithFormat:@"Цена = %@", self.string_priceLabel];
     self.descrTextView.text = self.string_descrTextView;
-    
-    
-//    NSString * formatPNG = @"png";
-//    NSString * formatJPG = @"jpg";
-//    UIImage * image = [[UIImage alloc] init];
-//    
-//    if ([self.string_valueLabel isEqualToString:@"cola"]) {
-//        image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.%@", self.string_valueLabel, formatJPG]];
-//    }else {
-//        image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.%@", self.string_valueLabel, formatPNG]];
-//    }
-    
-    
-//    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", self.string_valueLabel]];
     
     
     self.DetailImageView.image = [UIImage imageNamed:self.string_valueLabel];
@@ -47,4 +37,7 @@
 
 
 
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

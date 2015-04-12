@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MakeArrays.h"
 
 @interface DetailViewController : UIViewController
 
