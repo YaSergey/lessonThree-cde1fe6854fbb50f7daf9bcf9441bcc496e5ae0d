@@ -119,8 +119,7 @@
 		7C58F46E1AD30ED700D4D07D = {
 			isa = PBXGroup;
 			children = (
-				7C82E31A1ADA721B007DDA6D /* MakeArrays.h */,
-				7C82E31B1ADA721B007DDA6D /* MakeArrays.m */,
+				7C82E31D1ADAA4CE007DDA6D /* dataFile */,
 				7C82E2D41AD810AD007DDA6D /* CoreGraphics.framework */,
 				7C82E2D21AD81070007DDA6D /* Foundation.framework */,
 				7C82E2D01AD81054007DDA6D /* QuartzCore.framework */,
@@ -226,6 +225,15 @@
 				7C82E3101AD848EE007DDA6D /* CustomTableViewCell.m */,
 			);
 			name = CustomCell;
+			sourceTree = "<group>";
+		};
+		7C82E31D1ADAA4CE007DDA6D /* dataFile */ = {
+			isa = PBXGroup;
+			children = (
+				7C82E31A1ADA721B007DDA6D /* MakeArrays.h */,
+				7C82E31B1ADA721B007DDA6D /* MakeArrays.m */,
+			);
+			name = dataFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
