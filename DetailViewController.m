@@ -7,10 +7,15 @@
 //
 
 #import "DetailViewController.h"
+//#import "MakeArrays.h"
+
+
 
 @interface DetailViewController ()
 
-- (IBAction)back:(id)sender;
+
+
+- (IBAction)Back:(id)sender;
 
 
 
@@ -28,6 +33,10 @@
     
     self.DetailImageView.image = [UIImage imageNamed:self.string_valueLabel];
     
+    
+    
+    
+    NSLog(@"имя картинки = %@", self.string_valueLabel);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +46,8 @@
 
 
 
-- (IBAction)back:(id)sender {
+
+- (IBAction)Back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

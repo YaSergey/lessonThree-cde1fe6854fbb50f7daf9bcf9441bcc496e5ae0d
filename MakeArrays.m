@@ -61,14 +61,13 @@
     }
     return arrayM;
     
-    NSLog(@"arrayM %@", arrayM);
-}
+   }
 
 + (NSMutableArray *) makeSecondArray {
     
     NSMutableArray * arrayM = [[NSMutableArray alloc]init];
     
-    NSString * stringValues = @"клубы,рестораны,бары,пабы,кафе";
+    NSString * stringValues = @"clubs,restorants,bars,pabs,cafe";
     NSString * stringPrices = @"1000,1200,3000,4000,6000";
     NSString * stringFortres = @"все включено,крепкий алкоголь,только вино,только пиво,лимонад";
     NSString * stringTitle = @"drink coke напитки компании кокакола производятся в америке,бери от жизни все а когда нечего брать бери пепси,два по 50 лучший варинат для соблазнения ,ален делон не пьет адеколон он пьет двойной бурбон,даже и не думай брать эту гадость";
@@ -95,20 +94,20 @@
         
         NSString * value = [arrayValues objectAtIndex:i];
         
-        if ([value isEqualToString:@"клубы"]) {
+        if ([value isEqualToString:@"clubs"]) {
             [dict setObject: stringDisCola forKey:@"discr"];
         }
-        else if ([value isEqualToString:@"бары"]){
+        else if ([value isEqualToString:@"bars"]){
             [dict setObject: stringDisPepsi forKey:@"discr"];
         }
-        else if ([value isEqualToString:@"рестраны"]){
+        else if ([value isEqualToString:@"restorants"]){
             [dict setObject: stringDisWisky forKey:@"discr"];
         }
-        else if ([value isEqualToString:@"пабы"]){
+        else if ([value isEqualToString:@"pabs"]){
             [dict setObject: stringDisBoorbon forKey:@"discr"];
         }
         
-        else if ([value isEqualToString:@"кафе"]){
+        else if ([value isEqualToString:@"cafe"]){
             [dict setObject: stringDisCoctails forKey:@"discr"];
         }
         [arrayM addObject:dict];

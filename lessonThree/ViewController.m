@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSArray * arrayValues;
 @property (nonatomic, strong) NSArray * arrayFortres;
 @property (nonatomic, strong) NSArray * arrayTitle;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 
 
@@ -29,6 +29,7 @@
 - (IBAction)backAction:(id)sender;
 
 - (IBAction)firstArrayAction:(id)sender;
+
 - (IBAction)secondArrayAction:(id)sender;
 
 //@property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -43,7 +44,7 @@
     
     self.arrayM = [NSMutableArray array]; // выделение памяти для массива
     
-    
+       
     if (self.isFirstArray) {
         [self makeFirstArray];
     }
@@ -56,6 +57,7 @@
     self.isFirstArray = YES;
     [self.arrayM removeAllObjects]; // удаление данных из массива
     self.arrayM = [MakeArrays makeFirstArray];
+    NSLog(@"arrayM %@", _arrayM);
 
 }
 
@@ -63,6 +65,8 @@
     self.isFirstArray = NO;
     [self.arrayM removeAllObjects];
     self.arrayM = [MakeArrays makeSecondArray];
+    NSLog(@"arrayM %@", _arrayM);
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,8 +80,9 @@
 #pragma mark - UITableViewDelegate
 
 - (void) reloadTabView {
-
-    dispatch_async(dispatch_get_main_queue(), ^ {
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^ (void){
     
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex: 0] withRowAnimation:UITableViewRowAnimationFade];
     });
@@ -86,9 +91,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.arrayPrices.count;
+    NSLog(@"self.arrayPrices.count %lu \n self.arrayValue.count%@ ", (unsigned long)self.arrayPrices.count, self.arrayValues);
+    return self.arrayM.count;
 }
-
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -116,9 +121,9 @@
         cell.cellImageView.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@Icon.jpg",
         [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"value"]]];
     }
-  
 
        return cell;
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
@@ -159,4 +164,5 @@ detail.string_descrTextView  = [dict objectForKey:@"discr"];
     [self reloadTabView];
     
 }
+
 @end
