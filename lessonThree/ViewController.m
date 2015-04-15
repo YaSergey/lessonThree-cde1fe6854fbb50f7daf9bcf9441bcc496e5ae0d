@@ -55,18 +55,18 @@
 }
 
 - (void) makeFirstArray {
-    self.isFirstArray = YES;
-    [self.arrayM removeAllObjects]; // удаление данных из массива
+//    self.isFirstArray = YES;
+//    [self.arrayM removeAllObjects]; // удаление данных из массива
 //    self.arrayM = [MakeArrays makeFirstArray];
-    NSLog(@"arrayM %@", _arrayM);
+//    NSLog(@"arrayM %@", _arrayM);
 
 }
 
 - (void) makeSecondArray {
-    self.isFirstArray = NO;
-    [self.arrayM removeAllObjects];
+//    self.isFirstArray = NO;
+//    [self.arrayM removeAllObjects];
 //    self.arrayM = [MakeArrays makeSecondArray];
-    NSLog(@"arrayM %@", _arrayM);
+//    NSLog(@"arrayM %@", _arrayM);
 
 }
 
