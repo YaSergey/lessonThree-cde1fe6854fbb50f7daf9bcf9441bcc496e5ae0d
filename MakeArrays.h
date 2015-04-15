@@ -8,9 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol MakeArraysDelegate;
+
 @interface MakeArrays : NSObject
 
-+(NSMutableArray *) makeFirstArray;
-+(NSMutableArray *) makeSecondArray;
+- (void) makeFirstArray;
+- (void) makeSecondArray;
+
+@property (weak, nonatomic) id <MakeArraysDelegate> delegate;
+
+@end
+
+
+@protocol MakeArraysDelegate <NSObject>
+
+
+@optional
+
+-(void) makesArraysGetFirstArrayReady : (MakeArrays *) makeArrays FirstArray: (NSMutableArray *) firstArray;
+
+@required
+
+-(void) makesArraysGetSecondArrayReady : (MakeArrays *) makeArrays SecondArray: (NSMutableArray *) secondArray;
 
 @end

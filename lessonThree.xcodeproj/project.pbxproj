@@ -57,6 +57,7 @@
 		7C82E35F1ADBEFE6007DDA6D /* drinks.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C82E35E1ADBEFE6007DDA6D /* drinks.png */; };
 		7C82E3611ADBEFFA007DDA6D /* places.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C82E3601ADBEFFA007DDA6D /* places.png */; };
 		7C82E3631ADBF4CA007DDA6D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C82E3621ADBF4CA007DDA6D /* iAd.framework */; };
+		7C9649A91ADE56A000638C9A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9649A81ADE56A000638C9A /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		7C82E35E1ADBEFE6007DDA6D /* drinks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drinks.png; sourceTree = "<group>"; };
 		7C82E3601ADBEFFA007DDA6D /* places.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = places.png; sourceTree = "<group>"; };
 		7C82E3621ADBF4CA007DDA6D /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		7C9649A71ADE56A000638C9A /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		7C9649A81ADE56A000638C9A /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,15 +163,14 @@
 		7C58F46E1AD30ED700D4D07D = {
 			isa = PBXGroup;
 			children = (
+				7C82E31D1ADAA4CE007DDA6D /* dataFile */,
+				7C9649AA1ADE56D600638C9A /* Test */,
 				7C82E3621ADBF4CA007DDA6D /* iAd.framework */,
 				7C82E3231ADAFA6F007DDA6D /* UIKit.framework */,
 				7C82E3211ADAFA5E007DDA6D /* Accelerate.framework */,
-				7C82E31D1ADAA4CE007DDA6D /* dataFile */,
 				7C82E2D41AD810AD007DDA6D /* CoreGraphics.framework */,
 				7C82E2D21AD81070007DDA6D /* Foundation.framework */,
 				7C82E2D01AD81054007DDA6D /* QuartzCore.framework */,
-				7C82E2511AD6AC78007DDA6D /* Detail Controller */,
-				7C58F4791AD30ED700D4D07D /* lessonThree */,
 				7C58F4931AD30ED700D4D07D /* lessonThreeTests */,
 				7C58F4781AD30ED700D4D07D /* Products */,
 			);
@@ -302,6 +304,17 @@
 				7C82E35C1ADBEA73007DDA6D /* coctails.png */,
 			);
 			path = places;
+			sourceTree = "<group>";
+		};
+		7C9649AA1ADE56D600638C9A /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				7C82E2511AD6AC78007DDA6D /* Detail Controller */,
+				7C58F4791AD30ED700D4D07D /* lessonThree */,
+				7C9649A71ADE56A000638C9A /* TestViewController.h */,
+				7C9649A81ADE56A000638C9A /* TestViewController.m */,
+			);
+			name = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +456,7 @@
 				7C19B4C91AD427B200DD417D /* imageCell.m in Sources */,
 				7C82E3191AD9B106007DDA6D /* MenuViewController.m in Sources */,
 				7C58F4801AD30ED700D4D07D /* AppDelegate.m in Sources */,
+				7C9649A91ADE56A000638C9A /* TestViewController.m in Sources */,
 				7C58F47D1AD30ED700D4D07D /* main.m in Sources */,
 				7C82E31C1ADA721B007DDA6D /* MakeArrays.m in Sources */,
 			);

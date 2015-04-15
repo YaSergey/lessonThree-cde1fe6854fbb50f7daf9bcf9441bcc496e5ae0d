@@ -10,7 +10,7 @@
 
 @implementation MakeArrays
 
-+ (NSMutableArray *) makeFirstArray {
+- (void) makeFirstArray {
 
     NSMutableArray * arrayM = [[NSMutableArray alloc]init];
     
@@ -25,21 +25,23 @@
     NSString *stringDisBoorbon = @"Бурбо́н вид виски, производится в США. Бурбон появился в конце XVIII начале XIX века в городе Парис (округ Бурбон, штат Кентукки, США)[1]. Точнее, 1821 годом датируется первая сохранившаяся реклама нового напитка с таким названием. Сам рецепт был известен и ранее: как минимум с 1789 года преподобный Элайя Крейг дистиллировал похожий напиток для нужд своих прихожан";
     NSString *stringDisCoctails = @"Б-52 коктейль (относится к категории коктейлей pousse café), состоящий из трёх наслоённых ликёров. В правильно приготовленном коктейле кофейный ликёр (например, Kahlúa), ликёр Бейлис и ликёр Cointreau (либо Трипл-сек) не смешиваются и создают три хорошо видимых слоя";
 
+        __block int i = 0;
     
     NSArray * arrayValues = [stringValues componentsSeparatedByString:@","];
     NSArray * arrayPrices = [stringPrices componentsSeparatedByString:@","];
     NSArray * arrayFortres = [stringFortres componentsSeparatedByString:@","];
     NSArray * arrayTitle = [stringTitle componentsSeparatedByString:@","];
-    
-    for (int i=0; i < arrayPrices.count; i++) {
+  
+    [arrayPrices enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+
         
         NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-        [dict setObject:[arrayPrices objectAtIndex:   i] forKey:@"price"];
-        [dict setObject:[arrayValues objectAtIndex:   i] forKey:@"value"];
-        [dict setObject:[arrayFortres objectAtIndex:  i] forKey:@"fortres"];
-        [dict setObject:[arrayTitle objectAtIndex:    i] forKey:@"title"];
+        [dict setObject:[arrayPrices objectAtIndex:   idx] forKey:@"price"];
+        [dict setObject:[arrayValues objectAtIndex:   idx] forKey:@"value"];
+        [dict setObject:[arrayFortres objectAtIndex:  idx] forKey:@"fortres"];
+        [dict setObject:[arrayTitle objectAtIndex:    idx] forKey:@"title"];
         
-        NSString * value = [arrayValues objectAtIndex:i];
+        NSString * value = [arrayValues objectAtIndex:idx];
         
         if ([value isEqualToString:@"cola"]) {
             [dict setObject: stringDisCola forKey:@"discr"];
@@ -58,12 +60,22 @@
             [dict setObject: stringDisCoctails forKey:@"discr"];
         }
         [arrayM addObject:dict];
-    }
-    return arrayM;
-    
-   }
+        
+        i++;
+        
+        if (stop && i == arrayPrices.count) {
+            
+            [self.delegate makesArraysGetFirstArrayReady:self FirstArray:arrayM];
+        }
+        
+        }];
 
-+ (NSMutableArray *) makeSecondArray {
+    }
+//    return arrayM;
+    
+
+
+- (void) makeSecondArray {
     
     NSMutableArray * arrayM = [[NSMutableArray alloc]init];
     
@@ -77,22 +89,25 @@
     NSString *stringDisWisky = @"Ви́ски (англ. whisky или whiskey) — крепкий ароматный алкогольный напиток, получаемый из различных видов зерна с использованием процессов соложения, перегонки и длительного выдерживания в дубовых бочках. При изготовлении виски может использоваться ячмень, рожь, пшеница или кукуруза. В Бретани также делают виски из гречихи. Содержание спирта — обычно 32—50 % об., однако некоторые сорта виски имеют бо́льшую крепость (до 60 % об.). Цвет напитка варьируется от светло-жёлтого до коричневого, содержание сахара — нулевое или крайне незначительное. Традиционными регионами, производящими виски, являются Шотландия и Ирландия.";
     NSString *stringDisBoorbon = @"Бурбо́н вид виски, производится в США. Бурбон появился в конце XVIII начале XIX века в городе Парис (округ Бурбон, штат Кентукки, США)[1]. Точнее, 1821 годом датируется первая сохранившаяся реклама нового напитка с таким названием. Сам рецепт был известен и ранее: как минимум с 1789 года преподобный Элайя Крейг дистиллировал похожий напиток для нужд своих прихожан";
     NSString *stringDisCoctails = @"Б-52 коктейль (относится к категории коктейлей pousse café), состоящий из трёх наслоённых ликёров. В правильно приготовленном коктейле кофейный ликёр (например, Kahlúa), ликёр Бейлис и ликёр Cointreau (либо Трипл-сек) не смешиваются и создают три хорошо видимых слоя";
-
+    
+    
+    __block int i = 0;
     
     NSArray * arrayValues = [stringValues componentsSeparatedByString:@","];
     NSArray * arrayPrices = [stringPrices componentsSeparatedByString:@","];
     NSArray * arrayFortres = [stringFortres componentsSeparatedByString:@","];
     NSArray * arrayTitle = [stringTitle componentsSeparatedByString:@","];
     
-    for (int i=0; i < arrayPrices.count; i++) {
+    [arrayPrices enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+
         
         NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-        [dict setObject:[arrayPrices objectAtIndex:   i] forKey:@"price"];
-        [dict setObject:[arrayValues objectAtIndex:   i] forKey:@"value"];
-        [dict setObject:[arrayFortres objectAtIndex:  i] forKey:@"fortres"];
-        [dict setObject:[arrayTitle objectAtIndex:    i] forKey:@"title"];
+        [dict setObject:[arrayPrices objectAtIndex:   idx] forKey:@"price"];
+        [dict setObject:[arrayValues objectAtIndex:   idx] forKey:@"value"];
+        [dict setObject:[arrayFortres objectAtIndex:  idx] forKey:@"fortres"];
+        [dict setObject:[arrayTitle objectAtIndex:    idx] forKey:@"title"];
         
-        NSString * value = [arrayValues objectAtIndex:i];
+        NSString * value = [arrayValues objectAtIndex:idx];
         
         if ([value isEqualToString:@"clubs"]) {
             [dict setObject: stringDisCola forKey:@"discr"];
@@ -111,8 +126,18 @@
             [dict setObject: stringDisCoctails forKey:@"discr"];
         }
         [arrayM addObject:dict];
-    }
-    return arrayM;
+        
+        i++;
+        
+        if (stop && i == arrayPrices.count) {
+            
+            [self.delegate makesArraysGetSecondArrayReady:self SecondArray:arrayM];
+            
+//            NSLog(@"if  %i, %i", i, arrayPrices.count);
+        }
+    }];
+    
+  //    return arrayM;
  }
 
 
