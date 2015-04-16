@@ -17,7 +17,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableArray * arrayM;
-@property (nonatomic, strong) NSMutableArray * makeFirstArray;
+//@property (nonatomic, strong) NSMutableArray * makeFirstArray;
 @property (nonatomic, strong) NSArray * arrayPrices;
 @property (nonatomic, strong) NSArray * arrayValues;
 @property (nonatomic, strong) NSArray * arrayFortres;
@@ -43,30 +43,38 @@
 
 - (void)viewDidLoad { [super viewDidLoad];
     
-    self.arrayM = [NSMutableArray array]; // выделение памяти для массива
-    
-       
-    if (self.isFirstArray) {
-        [self makeFirstArray];
-    }
-    else {
-        [self makeSecondArray];
-    }
+//    self.arrayM = [NSMutableArray array]; // выделение памяти для массива
+//    
+//       
+//    if (self.isFirstArray) {
+//        [self makeFirstArray];
+//    }
+//    else {
+//        [self makeSecondArray];
+//    }
 }
 
 - (void) makeFirstArray {
-//    self.isFirstArray = YES;
+    self.isFirstArray = YES;
+  
+self.arrayM = firstArray;
+    
+//    self.isFirstArray = firstArray ;
+    
+//    self.isFirstArray = firstArray;
+    
 //    [self.arrayM removeAllObjects]; // удаление данных из массива
-//    self.arrayM = [MakeArrays makeFirstArray];
-//    NSLog(@"arrayM %@", _arrayM);
+    NSLog(@"Печать таблицы 1 из контроллера arrayM %@", self.arrayM);
 
 }
 
 - (void) makeSecondArray {
-//    self.isFirstArray = NO;
+    self.isFirstArray = NO;
 //    [self.arrayM removeAllObjects];
-//    self.arrayM = [MakeArrays makeSecondArray];
-//    NSLog(@"arrayM %@", _arrayM);
+    
+self.arrayM = secondArray;
+    
+    NSLog(@"Печать таблицы 2 из контроллера arrayM %@", self.arrayM);
 
 }
 
@@ -92,7 +100,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"self.arrayM.count %lu ", (unsigned long)self.arrayM.count);
+//    NSLog(@"self.arrayM.count %lu ", (unsigned long)self.arrayM.count);
     return self.arrayM.count;
 }
 
@@ -148,28 +156,6 @@ detail.string_descrTextView  = [dict objectForKey:@"discr"];
 
 }
 
-//-(void) removeBannerz{
-//    
-//    NSLog(@"Removez banner");
-//    
-//    [[MKStoreManager sharedManager]requestProductData];
-//    [MKStoreManager sharedManager].delegate = self;
-//    
-//    if ([MKStoreManager featureAPurchased]){
-//        
-//        self.bannerBlock.hidden = YES;
-//        self.upButton.hidden = YES;
-//        
-//        [self.bannerBlock setNeedsDisplay];
-//        
-//        
-//        
-//    } else {
-//        
-//        NSLog(@"NO PURCHASE");
-//    }
-
-
 
 - (IBAction)backAction:(id)sender {
     
@@ -181,8 +167,8 @@ detail.string_descrTextView  = [dict objectForKey:@"discr"];
     [marray setDelegate:self];
     [marray makeFirstArray];
     
-    [self makeFirstArray];
-    [self reloadTabView];
+//    [self makeFirstArray];
+//    [self reloadTabView];
 }
 
 - (IBAction)secondArrayAction:(id)sender {
@@ -190,22 +176,25 @@ detail.string_descrTextView  = [dict objectForKey:@"discr"];
     [marray setDelegate:self];
     [marray makeSecondArray];
     
-    [self makeSecondArray];
-    [self reloadTabView];
+//    [self makeSecondArray];
+//    [self reloadTabView];
     
 }
 
 
-//================================================
+//===============================++++++++++++++++++=================
 #pragma mark - MakeArraysDelegate
 
 - (void) makesArraysGetFirstArrayReady:(MakeArrays *)makeArrays FirstArray:(NSMutableArray *)firstArray {
-    [self.arrayM removeAllObjects];
     
     self.isFirstArray = YES;
     [self reloadTabView];
+    self.arrayM = firstArray;
+    
+//    [self.arrayM removeAllObjects];
+    
+    
 
-//    NSLog(@"secondArray %@", firstArray);
     
 }
 
@@ -213,8 +202,9 @@ detail.string_descrTextView  = [dict objectForKey:@"discr"];
     
     self.isFirstArray = NO;
     [self reloadTabView];
+    self.arrayM = secondArray;
     
-    NSLog(@"secondArray %@", secondArray);
+//    NSLog(@"secondArray %@", secondArray);
 }
 
 @end

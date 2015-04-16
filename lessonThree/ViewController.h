@@ -12,6 +12,7 @@
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MakeArraysDelegate>
 
 @property (nonatomic, assign) BOOL isFirstArray;
+@property (nonatomic, assign) BOOL isSecondArray;
 
 
 @end

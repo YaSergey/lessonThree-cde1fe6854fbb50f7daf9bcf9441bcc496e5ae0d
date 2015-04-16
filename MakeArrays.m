@@ -32,6 +32,8 @@
     NSArray * arrayFortres = [stringFortres componentsSeparatedByString:@","];
     NSArray * arrayTitle = [stringTitle componentsSeparatedByString:@","];
   
+//    NSLog(@"пердварительная печать первого массива 1 %@", arrayM);
+    
     [arrayPrices enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 
         
@@ -63,13 +65,16 @@
         
         i++;
         
-        if (stop && i == arrayPrices.count) {
+        if (stop && i == arrayM.count) {
+            
+//            NSLog(@"!!!!arrayM.count %lu %@", (unsigned long)arrayM.count, arrayM);
             
             [self.delegate makesArraysGetFirstArrayReady:self FirstArray:arrayM];
         }
         
         }];
 
+// NSLog(@"Печать массива в консоль №1 - arrayM %@", arrayM);
     }
 //    return arrayM;
     
@@ -97,6 +102,7 @@
     NSArray * arrayPrices = [stringPrices componentsSeparatedByString:@","];
     NSArray * arrayFortres = [stringFortres componentsSeparatedByString:@","];
     NSArray * arrayTitle = [stringTitle componentsSeparatedByString:@","];
+    
     
     [arrayPrices enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 
@@ -129,11 +135,13 @@
         
         i++;
         
-        if (stop && i == arrayPrices.count) {
+        if (stop && i == arrayM.count) {
             
             [self.delegate makesArraysGetSecondArrayReady:self SecondArray:arrayM];
             
-//            NSLog(@"if  %i, %i", i, arrayPrices.count);
+//         NSLog(@"if  %i, %i", i, arrayM.count);
+//            NSLog(@"предварительная печать ВТОРОГО массива %@", arrayM);
+
         }
     }];
     

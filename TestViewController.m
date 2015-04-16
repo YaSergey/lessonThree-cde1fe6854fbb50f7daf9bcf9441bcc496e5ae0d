@@ -10,14 +10,21 @@
 
 @interface TestViewController ()
 
+
+
+
 @end
 
 @implementation TestViewController
+
+
 
 - (void) viewDidLoad {
 
     [super viewDidLoad];
 }
+
+
 
 - (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -26,7 +33,15 @@
 
 - (void) textFieldDidBeginEding:(UITextField *)textField {
 
-        NSLog(@"textFieldDidBeginEding");
+    
+    UITextField * userName = [[UITextField alloc] init];
+
+    
+//    (NSString *)substringFromIndex:(textFieldOne)from ;
+
+
+    
+        NSLog(@"textFieldDidBeginEding %@", userName);
     
     
 }
@@ -38,17 +53,20 @@
     else{
     }
     
-    NSLog(@"textFieldDidEndEditing");
+    
+    
+    NSLog(@"textFieldDidEndEditing %@", textField.text);
 }
 
-- (BOOL)textfieldShouldRenurn: (UITextField *)textField {
+- (BOOL)textFieldShouldRenurn: (UITextField *)textField {
 
     if (textField == self.textFieldOne && self.textFieldOne.text.length > 0) {
         
-        [self.textFieldOne resignFirstResponder]; 
+        [self.textFieldOne resignFirstResponder];
+       
     }
     
-    return YES;
+ return YES;
 }
 
 @end

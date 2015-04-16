@@ -12,4 +12,5 @@
 @property (strong, nonatomic) IBOutlet UITextField *textFieldOne;
 @property (strong, nonatomic) IBOutlet UITextField *textFieldTwo;
 
+@property (nonatomic, strong) NSMutableArray * arrayUserName;
 @end

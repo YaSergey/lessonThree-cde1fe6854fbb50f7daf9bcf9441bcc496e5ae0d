@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "MakeArrays.h"
+#include "ViewController.h"
 
 @interface MenuViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *buttonFirst;
@@ -36,6 +37,9 @@
     
     ViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"view"];
     view.isFirstArray = YES;
+//    self.arrayM = firstArray;
+
+ 
 
     [self.navigationController pushViewController:view animated:YES];
 
