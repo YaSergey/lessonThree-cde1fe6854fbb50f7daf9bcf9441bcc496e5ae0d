@@ -20,10 +20,16 @@
 
 
 - (void) viewDidLoad {
+    
+    [self performSelector:@selector(setSwitch) withObject: nil afterDelay:5.0f];
 
     [super viewDidLoad];
 }
 
+- (void) setSwitch {
+
+    [self.uiSwitchOutlet setOn:NO animated:YES];
+}
 
 
 - (void) didReceiveMemoryWarning {
@@ -31,42 +37,55 @@
     
 }
 
-- (void) textFieldDidBeginEding:(UITextField *)textField {
+- (void)textFieldDidBeginEditing:(UITextField *)textField; { // метод реагируерт на начало ввода текста
+    
+    NSLog(@"textFieldDidBeginEditing %@", textField.text);
 
-    
-    UITextField * userName = [[UITextField alloc] init];
-
-    
-//    (NSString *)substringFromIndex:(textFieldOne)from ;
-
-
-    
-        NSLog(@"textFieldDidBeginEding %@", userName);
-    
-    
-}
--(void) textFieldDidEndEditing:(UITextField *)textField {
-
-    if (textField.text.length == 0 ) {
-        
-    }
-    else{
-    }
-    
-    
-    
-    NSLog(@"textFieldDidEndEditing %@", textField.text);
 }
 
-- (BOOL)textFieldShouldRenurn: (UITextField *)textField {
-
-    if (textField == self.textFieldOne && self.textFieldOne.text.length > 0) {
-        
-        [self.textFieldOne resignFirstResponder];
-       
-    }
+- (void)textFieldDidEndEditing:(UITextField *)textField;  {
     
- return YES;
+
 }
 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField; {
+    
+if (textField == self.textFieldOne && self.textFieldOne.text.length > 0
+    && self.textFieldTwo && self.textFieldTwo.text.length >0)
+{
+[self.textFieldOne resignFirstResponder];
+[self.textFieldTwo resignFirstResponder];
+
+return YES;
+    }
+     return NO;
+
+}
+
+
+
+
+
+ 
+- (IBAction)buttonAction:(id)sender {
+
+    NSLog(@"buttonAction");
+    
+
+}
+
+- (IBAction)switchOne:(id)sender {
+    UISwitch * switchUI = (UISwitch *)sender;
+    
+    if (switchUI.on) {
+        NSLog(@"switchOne ON");
+    
+    }else{
+    
+        NSLog(@"switchAction OFF");
+    }
+    
+    [self buttonAction:nil];
+}
 @end

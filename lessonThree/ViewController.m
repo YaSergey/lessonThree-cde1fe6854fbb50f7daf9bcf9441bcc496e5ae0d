@@ -44,39 +44,39 @@
 - (void)viewDidLoad { [super viewDidLoad];
     
 //    self.arrayM = [NSMutableArray array]; // выделение памяти для массива
+    
+       
+    if (self.isFirstArray) {
+        [self firstArrayAction: nil];
+    }
+    else {
+        [self firstArrayAction:nil];
+    }
+}
+
+//- (void) makeFirstArray {
+//    self.isFirstArray = YES;
+//  
+////self.arrayM = firstArray;
 //    
-//       
-//    if (self.isFirstArray) {
-//        [self makeFirstArray];
-//    }
-//    else {
-//        [self makeSecondArray];
-//    }
-}
-
-- (void) makeFirstArray {
-    self.isFirstArray = YES;
-  
-self.arrayM = firstArray;
-    
-//    self.isFirstArray = firstArray ;
-    
-//    self.isFirstArray = firstArray;
-    
-//    [self.arrayM removeAllObjects]; // удаление данных из массива
-    NSLog(@"Печать таблицы 1 из контроллера arrayM %@", self.arrayM);
-
-}
-
-- (void) makeSecondArray {
-    self.isFirstArray = NO;
-//    [self.arrayM removeAllObjects];
-    
-self.arrayM = secondArray;
-    
-    NSLog(@"Печать таблицы 2 из контроллера arrayM %@", self.arrayM);
-
-}
+////    self.isFirstArray = firstArray ;
+//    
+////    self.isFirstArray = firstArray;
+//    
+////    [self.arrayM removeAllObjects]; // удаление данных из массива
+//    NSLog(@"Печать таблицы 1 из контроллера arrayM %@", self.arrayM);
+//
+//}
+//
+//- (void) makeSecondArray {
+//    self.isFirstArray = NO;
+////    [self.arrayM removeAllObjects];
+//    
+////self.arrayM = secondArray;
+//    
+//    NSLog(@"Печать таблицы 2 из контроллера arrayM %@", self.arrayM);
+//
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -186,23 +186,20 @@ detail.string_descrTextView  = [dict objectForKey:@"discr"];
 #pragma mark - MakeArraysDelegate
 
 - (void) makesArraysGetFirstArrayReady:(MakeArrays *)makeArrays FirstArray:(NSMutableArray *)firstArray {
-    
-    self.isFirstArray = YES;
-    [self reloadTabView];
-    self.arrayM = firstArray;
-    
 //    [self.arrayM removeAllObjects];
-    
-    
-
+    self.isFirstArray = YES;
+    self.arrayM = firstArray;
+     [self reloadTabView];
     
 }
 
 - (void) makesArraysGetSecondArrayReady:(MakeArrays *)makeArrays SecondArray:(NSMutableArray *)secondArray {
     
     self.isFirstArray = NO;
-    [self reloadTabView];
+
     self.arrayM = secondArray;
+    
+    [self reloadTabView];
     
 //    NSLog(@"secondArray %@", secondArray);
 }

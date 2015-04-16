@@ -163,6 +163,7 @@
 		7C58F46E1AD30ED700D4D07D = {
 			isa = PBXGroup;
 			children = (
+				7C58F4791AD30ED700D4D07D /* lessonThree */,
 				7C82E31D1ADAA4CE007DDA6D /* dataFile */,
 				7C9649AA1ADE56D600638C9A /* Test */,
 				7C82E3621ADBF4CA007DDA6D /* iAd.framework */,
@@ -188,6 +189,7 @@
 		7C58F4791AD30ED700D4D07D /* lessonThree */ = {
 			isa = PBXGroup;
 			children = (
+				7C82E2511AD6AC78007DDA6D /* Detail Controller */,
 				7C82E30E1AD848A3007DDA6D /* CustomCell */,
 				7C58F47E1AD30ED700D4D07D /* AppDelegate.h */,
 				7C58F47F1AD30ED700D4D07D /* AppDelegate.m */,
@@ -239,6 +241,7 @@
 				7C82E2791AD70153007DDA6D /* resurses */,
 			);
 			name = "Detail Controller";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7C82E2791AD70153007DDA6D /* resurses */ = {
@@ -309,8 +312,6 @@
 		7C9649AA1ADE56D600638C9A /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				7C82E2511AD6AC78007DDA6D /* Detail Controller */,
-				7C58F4791AD30ED700D4D07D /* lessonThree */,
 				7C9649A71ADE56A000638C9A /* TestViewController.h */,
 				7C9649A81ADE56A000638C9A /* TestViewController.m */,
 			);
@@ -327,6 +328,7 @@
 				7C58F4731AD30ED700D4D07D /* Sources */,
 				7C58F4741AD30ED700D4D07D /* Frameworks */,
 				7C58F4751AD30ED700D4D07D /* Resources */,
+				7CE222131AE02A80001598AD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -444,6 +446,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CE222131AE02A80001598AD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7C58F4731AD30ED700D4D07D /* Sources */ = {

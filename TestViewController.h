@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface TestViewController : UIViewController <UITextFieldDelegate>
-@property (strong, nonatomic) IBOutlet UITextField *textFieldOne;
-@property (strong, nonatomic) IBOutlet UITextField *textFieldTwo;
+
+@property (weak, nonatomic) IBOutlet UITextField *textFieldOne;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldTwo;
 
 @property (nonatomic, strong) NSMutableArray * arrayUserName;
+- (IBAction)buttonAction:(id)sender;
+- (IBAction)switchOne:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *uiSwitchOutlet;
 @end
