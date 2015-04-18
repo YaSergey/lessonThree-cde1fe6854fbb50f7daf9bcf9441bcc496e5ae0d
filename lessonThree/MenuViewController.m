@@ -51,6 +51,7 @@
     ViewController * view = [self.storyboard instantiateViewControllerWithIdentifier:@"view"];
 
     view.isFirstArray = NO;
+//    self.arrayM = secondArray;
     
     [self.navigationController pushViewController:view animated:YES];
     

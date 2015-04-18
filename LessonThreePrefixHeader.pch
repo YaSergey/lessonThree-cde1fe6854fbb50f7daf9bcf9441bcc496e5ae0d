@@ -1,0 +1,17 @@
+//
+//  LessonThreePrefixHeader.pch
+//  lessonThree
+//
+//  Created by Sergey Yasnetsky on 19.04.15.
+//  Copyright (c) 2015 Sergey Yasnetsky. All rights reserved.
+//
+
+#ifndef lessonThree_LessonThreePrefixHeader_pch
+#define lessonThree_LessonThreePrefixHeader_pch
+
+#import "AppConstants.h"
+
+
+
+
+#endif

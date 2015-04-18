@@ -7,6 +7,7 @@
 //
 
 #import "TestViewController.h"
+#import "AppConstants.h"
 
 @interface TestViewController ()
 
@@ -21,9 +22,22 @@
 
 - (void) viewDidLoad {
     
-    [self performSelector:@selector(setSwitch) withObject: nil afterDelay:5.0f];
+    
+[super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor colorWithHexString: MAIN_COLOR];
+    
+    [self performSelector:@selector(setSwitch) withObject:nil afterDelay:1.0f];
+    
+//[self performSelector:@selector(changeColor) withObject: nil afterDelay:5.0f];
 
-    [super viewDidLoad];
+   
+    
+    
+}
+
+- (void) changeColor {
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 - (void) setSwitch {
@@ -45,24 +59,24 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField;  {
     
-
+NSLog(@"textFieldDidBeginEditing %@", textField.text);
 }
 
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField; {
-    
-if (textField == self.textFieldOne && self.textFieldOne.text.length > 0
-    && self.textFieldTwo && self.textFieldTwo.text.length >0)
-{
-[self.textFieldOne resignFirstResponder];
-[self.textFieldTwo resignFirstResponder];
 
-return YES;
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;{
+
+    if (textField == self.textFieldOne && self.textFieldOne.text.length > 0) {
+        [self.textFieldOne resignFirstResponder];
+        return YES;
     }
-     return NO;
-
+    
+    if (self.textFieldTwo && self.textFieldTwo.text.length > 0) {
+        [self.textFieldTwo resignFirstResponder];
+        return YES;
+    }
+    return NO;
 }
-
 
 
 
