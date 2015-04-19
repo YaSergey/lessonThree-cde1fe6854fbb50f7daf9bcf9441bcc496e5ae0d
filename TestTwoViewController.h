@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIColor+HexColor.h"
-#import "AppConstants.h"
+
 
 
 @interface TestTwoViewController : UIViewController

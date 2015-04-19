@@ -7,7 +7,6 @@
 //
 
 #import "TestTwoViewController.h"
-#import "AppConstants.h"
 
 
 @interface TestTwoViewController ()
@@ -20,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithHexString:MAIN_COLOR];
+//    self.view.backgroundColor = [UIColor colorWithHexString:MAIN_COLOR];
 
     // Do any additional setup after loading the view.
 }

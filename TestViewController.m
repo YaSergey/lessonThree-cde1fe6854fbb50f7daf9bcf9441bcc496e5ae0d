@@ -7,7 +7,6 @@
 //
 
 #import "TestViewController.h"
-#import "AppConstants.h"
 
 @interface TestViewController ()
 
@@ -25,16 +24,57 @@
     
 [super viewDidLoad];
     
+    NSLog(@"viewDidLoad");
+    
     self.view.backgroundColor = [UIColor colorWithHexString: MAIN_COLOR];
-    
-    [self performSelector:@selector(setSwitch) withObject:nil afterDelay:1.0f];
-    
+
+//[self performSelector:@selector(setSwitch) withObject:nil afterDelay:1.0f];
 //[self performSelector:@selector(changeColor) withObject: nil afterDelay:5.0f];
 
-   
     
+
+    
+
+}
+
+- (void) dealloc {
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
+
+- (void) notif_Method: (NSNotification *) notif {
+    
+    NSString * string = [notif.userInfo valueForKey:TEST_KEY];
+    
+    NSLog(@"notif_Method %@", string);
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [NSNotificationCenter set_Notif:TEST_NOTIF Selector:@selector(notif_Method:) Object:self];
+    
+    NSLog(@"viewWillAppear");
+    
+}
+- (void)viewDidAppear:(BOOL)animated{
+    
+    NSLog(@"viewDidAppear");
+    
+    [NSNotificationCenter delete_Notif];
+    
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"viewWillDisappear");
+
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    NSLog(@"viewDidDisappear");
+}
+
+
 
 - (void) changeColor {
     self.view.backgroundColor = [UIColor redColor];
@@ -94,6 +134,12 @@ NSLog(@"textFieldDidBeginEditing %@", textField.text);
     
     if (switchUI.on) {
         NSLog(@"switchOne ON");
+        
+        NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:@"TEST OBJECT", TEST_KEY, nil];
+        
+//        NSNotificationCenter call_Notif:TEST_NOTIF Dictionary:<#(NSDictionary *)#>
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:TEST_NOTIF object: dict];
     
     }else{
     

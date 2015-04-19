@@ -67,9 +67,18 @@
         
         if (stop && i == arrayM.count) {
             
-//            NSLog(@"!!!!arrayM.count %lu %@", (unsigned long)arrayM.count, arrayM);
+NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:arrayM, ARRAY_KEY, nil];
             
-            [self.delegate makesArraysGetFirstArrayReady:self FirstArray:arrayM];
+[NSNotificationCenter call_Notif:ARRAY_NOTIF Dictionary:dict];
+            
+            
+UILabel * lbl = [[UILabel alloc] init];
+            lbl.font = [UIFont fontWithName:MAIN_FONT size:MAIN_SIZE];
+            
+            //////////
+            
+            
+//            [self.delegate makesArraysGetFirstArrayReady:self FirstArray:arrayM];
         }
         
         }];
@@ -137,7 +146,15 @@
         
         if (stop && i == arrayM.count) {
             
-            [self.delegate makesArraysGetSecondArrayReady:self SecondArray:arrayM];
+NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:arrayM, ARRAY_KEY, nil];
+            
+[NSNotificationCenter call_Notif:ARRAY_NOTIF Dictionary:dict];
+            
+            
+UILabel * lbl = [[UILabel alloc] init];
+            lbl.font = [UIFont fontWithName:MAIN_FONT size:MAIN_SIZE];
+            
+//            [self.delegate makesArraysGetSecondArrayReady:self SecondArray:arrayM];
             
 //         NSLog(@"if  %i, %i", i, arrayM.count);
 //            NSLog(@"предварительная печать ВТОРОГО массива %@", arrayM);

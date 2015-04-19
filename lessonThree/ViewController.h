@@ -14,5 +14,7 @@
 @property (nonatomic, assign) BOOL isFirstArray;
 @property (nonatomic, assign) BOOL isSecondArray;
 
+- (void) makeFirstArray;
+- (void) makeSecondArray;
 
 @end

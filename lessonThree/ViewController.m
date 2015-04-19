@@ -17,12 +17,13 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableArray * arrayM;
-//@property (nonatomic, strong) NSMutableArray * makeFirstArray;
-@property (nonatomic, strong) NSArray * arrayPrices;
-@property (nonatomic, strong) NSArray * arrayValues;
-@property (nonatomic, strong) NSArray * arrayFortres;
-@property (nonatomic, strong) NSArray * arrayTitle;
+
+
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) MakeArrays * makeArray;
+
+
 
 
 
@@ -41,42 +42,60 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad { [super viewDidLoad];
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-//    self.arrayM = [NSMutableArray array]; // выделение памяти для массива
+    self.isFirstArray = YES;
+    self.arrayM = [NSMutableArray array];
+    self.makeArray = [MakeArrays new];
+    self.makeArray.delegate = self;
+    
+self.arrayM = [NSMutableArray array]; // выделение памяти для массива
     
        
     if (self.isFirstArray) {
         [self firstArrayAction: nil];
     }
     else {
-        [self firstArrayAction:nil];
+        [self secondArrayAction:nil];
     }
+    
 }
 
-//- (void) makeFirstArray {
-//    self.isFirstArray = YES;
-//  
-////self.arrayM = firstArray;
-//    
-////    self.isFirstArray = firstArray ;
-//    
-////    self.isFirstArray = firstArray;
-//    
-////    [self.arrayM removeAllObjects]; // удаление данных из массива
-//    NSLog(@"Печать таблицы 1 из контроллера arrayM %@", self.arrayM);
-//
-//}
-//
-//- (void) makeSecondArray {
-//    self.isFirstArray = NO;
-////    [self.arrayM removeAllObjects];
-//    
-////self.arrayM = secondArray;
-//    
-//    NSLog(@"Печать таблицы 2 из контроллера arrayM %@", self.arrayM);
-//
-//}
+//    метод создания первого массива
+
+- (void) makeFirstArray: (NSNotification *) notification {
+
+    [self.arrayM removeAllObjects];
+    self.arrayM = [notification.userInfo objectForKey:ARRAY_KEY];
+    self.isFirstArray = YES;
+    [self reloadTableView];
+    
+}
+
+//    метод создания второго массива
+- (void) makeSecondArray (NSNotification *) notification {
+    
+    [self.arrayM removeAllObjects];
+    self.arrayM = [notification.userInfo objectForKey:ARRAY_KEY];
+    self.isFirstArray = NO;
+    [self reloadTableView];
+    
+}
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [NSNotificationCenter set_Notif:ARRAY_NOTIF Selector: @selector(makeFirstArray:) Object:self];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [NSNotificationCenter delete_Notif];
+}
+
+- (void) reloadTableView {dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];});
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -157,24 +176,29 @@ detail.string_descrTextView  = [dict objectForKey:@"discr"];
 }
 
 
-- (IBAction)backAction:(id)sender {
+- (IBAction)backAction:(id)sender { // кнопка назад
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)firstArrayAction:(id)sender {
-    MakeArrays * marray = [MakeArrays new];
-    [marray setDelegate:self];
-    [marray makeFirstArray];
+- (IBAction)firstArrayAction:(id)sender { // вызов первого массива
+    
+    [self.makeArray makeFirstArray];
+    
+//    MakeArrays * marray = [MakeArrays new];
+//    [marray setDelegate:self];
+//    [marray makeFirstArray];
     
 //    [self makeFirstArray];
 //    [self reloadTabView];
 }
 
-- (IBAction)secondArrayAction:(id)sender {
-    MakeArrays * marray = [MakeArrays new];
-    [marray setDelegate:self];
-    [marray makeSecondArray];
+- (IBAction)secondArrayAction:(id)sender {  // вызов второго массива
+    [self.makeArray makeSecondArray];
+    
+//    MakeArrays * marray = [MakeArrays new];
+//    [marray setDelegate:self];
+//    [marray makeSecondArray];
     
 //    [self makeSecondArray];
 //    [self reloadTabView];
@@ -194,14 +218,11 @@ detail.string_descrTextView  = [dict objectForKey:@"discr"];
 }
 
 - (void) makesArraysGetSecondArrayReady:(MakeArrays *)makeArrays SecondArray:(NSMutableArray *)secondArray {
-    
     self.isFirstArray = NO;
-
     self.arrayM = secondArray;
-    
     [self reloadTabView];
     
-//    NSLog(@"secondArray %@", secondArray);
+    NSLog(@"secondArray %@", secondArray);
 }
 
 @end

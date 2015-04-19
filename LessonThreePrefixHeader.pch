@@ -10,6 +10,9 @@
 #define lessonThree_LessonThreePrefixHeader_pch
 
 #import "AppConstants.h"
+#import "UIColor+HexColor.h"
+
+#import "NSNotificationCenter+NotificationOptions.h"
 
 
 

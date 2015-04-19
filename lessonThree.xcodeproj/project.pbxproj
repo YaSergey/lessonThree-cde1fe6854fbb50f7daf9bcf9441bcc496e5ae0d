@@ -11,6 +11,7 @@
 		7C3B786A1AE0F21E007511AB /* UserNameArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B78691AE0F21E007511AB /* UserNameArrays.m */; };
 		7C3B786D1AE30294007511AB /* TestTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B786C1AE30294007511AB /* TestTwoViewController.m */; };
 		7C3B78751AE316B6007511AB /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B78741AE316B6007511AB /* UIColor+HexColor.m */; };
+		7C3B78781AE3C7D5007511AB /* NSNotificationCenter+NotificationOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B78771AE3C7D5007511AB /* NSNotificationCenter+NotificationOptions.m */; };
 		7C58F47D1AD30ED700D4D07D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C58F47C1AD30ED700D4D07D /* main.m */; };
 		7C58F4801AD30ED700D4D07D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C58F47F1AD30ED700D4D07D /* AppDelegate.m */; };
 		7C58F4831AD30ED700D4D07D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C58F4821AD30ED700D4D07D /* ViewController.m */; };
@@ -84,6 +85,8 @@
 		7C3B786F1AE30F73007511AB /* LessonThreePrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LessonThreePrefixHeader.pch; sourceTree = "<group>"; };
 		7C3B78731AE316B6007511AB /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
 		7C3B78741AE316B6007511AB /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		7C3B78761AE3C7D5007511AB /* NSNotificationCenter+NotificationOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+NotificationOptions.h"; sourceTree = "<group>"; };
+		7C3B78771AE3C7D5007511AB /* NSNotificationCenter+NotificationOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+NotificationOptions.m"; sourceTree = "<group>"; };
 		7C58F4771AD30ED700D4D07D /* lessonThree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lessonThree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C58F47B1AD30ED700D4D07D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C58F47C1AD30ED700D4D07D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 		7C58F46E1AD30ED700D4D07D = {
 			isa = PBXGroup;
 			children = (
+				7C3B78761AE3C7D5007511AB /* NSNotificationCenter+NotificationOptions.h */,
+				7C3B78771AE3C7D5007511AB /* NSNotificationCenter+NotificationOptions.m */,
 				7C3B78731AE316B6007511AB /* UIColor+HexColor.h */,
 				7C3B78741AE316B6007511AB /* UIColor+HexColor.m */,
 				7C3B786F1AE30F73007511AB /* LessonThreePrefixHeader.pch */,
@@ -487,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3B78781AE3C7D5007511AB /* NSNotificationCenter+NotificationOptions.m in Sources */,
 				7C3B78751AE316B6007511AB /* UIColor+HexColor.m in Sources */,
 				7C82E2541AD6AD29007DDA6D /* DetailViewController.m in Sources */,
 				7C58F4831AD30ED700D4D07D /* ViewController.m in Sources */,
@@ -563,6 +569,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/yasnetsky/Documents/обучение С/ProgSchool_ObjC/lessonThree-cde1fe6854fbb50f7daf9bcf9441bcc496e5ae0d/LessonThreePrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -604,6 +612,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/yasnetsky/Documents/обучение С/ProgSchool_ObjC/lessonThree-cde1fe6854fbb50f7daf9bcf9441bcc496e5ae0d/LessonThreePrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
