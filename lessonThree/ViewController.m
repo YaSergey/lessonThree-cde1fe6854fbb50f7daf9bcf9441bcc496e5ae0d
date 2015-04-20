@@ -68,13 +68,13 @@ self.arrayM = [NSMutableArray array]; // выделение памяти для 
 
     [self.arrayM removeAllObjects];
     self.arrayM = [notification.userInfo objectForKey:ARRAY_KEY];
-    self.isFirstArray = YES;
-    [self reloadTableView];
-    
+      self.isFirstArray = YES;
+        [self reloadTableView];
+
 }
 
 //    метод создания второго массива
-- (void) makeSecondArray (NSNotification *) notification {
+- (void) makeSecondArray: (NSNotification *) notification {
     
     [self.arrayM removeAllObjects];
     self.arrayM = [notification.userInfo objectForKey:ARRAY_KEY];

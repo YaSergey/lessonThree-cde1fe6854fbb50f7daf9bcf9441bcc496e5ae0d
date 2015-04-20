@@ -12,11 +12,11 @@
 
 - (void) makeFirstArray {
 
-    NSMutableArray * arrayM = [[NSMutableArray alloc]init];
+    NSMutableArray * arrayMainMutable = [[NSMutableArray alloc]init];
     
     NSString * stringValues = @"cola,pepsi,wisky,vine,coctails";
     NSString * stringPrices = @"100,120,300,400,600";
-    NSString * stringFortres = @"безалкогольный,безалкогольный,крепкий,крепкий,средний";
+    NSString * stringFortres = @"безалкогольный,безалкогольный,крепкий,крепкий2,средний";
     NSString * stringTitle = @"drink coke напитки компании кокакола производятся в америке,бери от жизни все а когда нечего брать бери пепси,два по 50 лучший варинат для соблазнения ,ален делон не пьет адеколон он пьет двойной бурбон,даже и не думай брать эту гадость";
     
     NSString *stringDisCola = @"Напиток «Кока-кола» был придуман в Атланте (штат Джорджия, США) 8 мая 1886 года фармацевтом Джоном Ститом Пембертоном — бывшим офицером американской Армии конфедерации (есть легенда, что его придумал фермер, который продал свой рецепт Джону Ститу за 250 $, о чём Джон Стит якобы сказал в одном из своих интервью). Название для нового напитка придумал бухгалтер Пембертона — Фрэнк Робинсон, который также, владея каллиграфией, написал слова «Coca-Cola» фигурными буквами, до сих пор являющимися логотипом напитка";
@@ -61,13 +61,13 @@
         else if ([value isEqualToString:@"coctails"]){
             [dict setObject: stringDisCoctails forKey:@"discr"];
         }
-        [arrayM addObject:dict];
+        [arrayMainMutable addObject:dict];
         
         i++;
         
-        if (stop && i == arrayM.count) {
+        if (stop && i == arrayMainMutable.count) {
             
-NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:arrayM, ARRAY_KEY, nil];
+NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:arrayMainMutable, ARRAY_KEY, nil];
             
 [NSNotificationCenter call_Notif:ARRAY_NOTIF Dictionary:dict];
             

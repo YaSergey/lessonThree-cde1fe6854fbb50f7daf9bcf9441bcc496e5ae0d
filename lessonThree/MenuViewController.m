@@ -34,11 +34,21 @@
 
 
 - (void) goFirst {
-    
-    ViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"view"];
-    view.isFirstArray = YES;
-//    self.arrayM = firstArray;
 
+    
+    [ViewController makeFirstArray];
+    
+//    ViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"view"];
+//    view.isFirstArray = YES;
+//    self.arrayM = firstArray;
+    
+//    - (void) makeFirstArray: (NSNotification *) notification {
+//        
+//        [self.arrayM removeAllObjects];
+//        self.arrayM = [notification.userInfo objectForKey:ARRAY_KEY];
+//        self.isFirstArray = YES;
+//        [self reloadTableView];
+//
  
 
     [self.navigationController pushViewController:view animated:YES];

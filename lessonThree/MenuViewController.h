@@ -12,4 +12,8 @@
 
 @interface MenuViewController : UIViewController
 
+
+- (void) makeFirstArray;
+- (void) makeSecondArray;
+
 @end
