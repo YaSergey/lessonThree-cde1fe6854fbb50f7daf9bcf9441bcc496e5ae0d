@@ -16,7 +16,7 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) NSMutableArray * arrayM;
+//@property (nonatomic, strong) NSMutableArray * arrayM;
 
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
@@ -70,6 +70,8 @@ self.arrayM = [NSMutableArray array]; // выделение памяти для 
     self.arrayM = [notification.userInfo objectForKey:ARRAY_KEY];
       self.isFirstArray = YES;
         [self reloadTableView];
+    
+    NSLog(@"первый массив %@", self.arrayM);
 
 }
 

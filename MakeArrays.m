@@ -75,16 +75,15 @@ NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:arrayMainMuta
 UILabel * lbl = [[UILabel alloc] init];
             lbl.font = [UIFont fontWithName:MAIN_FONT size:MAIN_SIZE];
             
-            //////////
-            
-            
-//            [self.delegate makesArraysGetFirstArrayReady:self FirstArray:arrayM];
+
+[self.delegate makesArraysGetFirstArrayReady:self FirstArray:arrayM];
+
         }
         
-        }];
+    }];
 
 // NSLog(@"Печать массива в консоль №1 - arrayM %@", arrayM);
-    }
+}
 //    return arrayM;
     
 
@@ -154,7 +153,7 @@ NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:arrayM, ARRAY
 UILabel * lbl = [[UILabel alloc] init];
             lbl.font = [UIFont fontWithName:MAIN_FONT size:MAIN_SIZE];
             
-//            [self.delegate makesArraysGetSecondArrayReady:self SecondArray:arrayM];
+[self.delegate makesArraysGetSecondArrayReady:self SecondArray:arrayM];
             
 //         NSLog(@"if  %i, %i", i, arrayM.count);
 //            NSLog(@"предварительная печать ВТОРОГО массива %@", arrayM);

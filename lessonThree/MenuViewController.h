@@ -11,6 +11,7 @@
 #import "MakeArrays.h"
 
 @interface MenuViewController : UIViewController
+@property (nonatomic, strong) NSMutableArray * arrayM;
 
 
 - (void) makeFirstArray;

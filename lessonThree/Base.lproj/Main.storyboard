@@ -366,7 +366,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jmM-Rm-Z1y"/>
                     <connections>
-                        <outlet property="buttonFirst" destination="uov-06-v3C" id="pd1-rr-JGu"/>
+                        <outlet property="buttonFirst" destination="uov-06-v3C" id="emp-hl-FLW"/>
                         <outlet property="buttonSecond" destination="prA-Fs-9up" id="SQC-yd-Feq"/>
                     </connections>
                 </viewController>
