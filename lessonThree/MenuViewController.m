@@ -42,10 +42,10 @@
 - (void) goFirst {
 
     self.makeArray = [MakeArrays new];
-    [self.makeArray makeFirstArray];
+    [self.makeArray makeDrinksArray];
     
     ViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"view"];
-    view.isFirstArray = YES;
+    view.isDrinksArray = YES;
 //    self.arrayM = firstArray;
     
 //    - (void) makeFirstArray: (NSNotification *) notification {
@@ -63,13 +63,12 @@
 - (void) goSecond {
     
     self.makeArray = [MakeArrays new];
-    [self.makeArray makeSecondArray];
+    [self.makeArray makePlacesArray];
     
     ViewController * view = [self.storyboard instantiateViewControllerWithIdentifier:@"view"];
-//
-    view.isFirstArray = NO;
-//    self.arrayM = secondArray;
-//
+
+    view.isDrinksArray = NO;
+
     [self.navigationController pushViewController:view animated:YES];
     
 }

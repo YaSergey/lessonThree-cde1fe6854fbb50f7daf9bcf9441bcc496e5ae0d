@@ -12,11 +12,13 @@
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MakeArraysDelegate>
 
-@property (nonatomic, assign) BOOL isFirstArray;
-@property (nonatomic, assign) BOOL isSecondArray;
-@property (nonatomic, strong) NSMutableArray * arrayM;
+@property (nonatomic, assign) BOOL isDrinksArray;
+@property (nonatomic, assign) BOOL isPlacesArray;
+@property (nonatomic, strong) NSMutableArray * arrayMainMutable;
+@property (weak, nonatomic) id <MakeArraysDelegate> delegate;
 
-- (void) makeFirstArray;
-- (void) makeSecondArray;
+
+- (void) makeDrinksArray;
+- (void) makePlacesArray;
 
 @end

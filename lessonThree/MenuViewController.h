@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSMutableArray * arrayM;
 
 
-- (void) makeFirstArray;
-- (void) makeSecondArray;
+- (void) makeDrinksArray;
+- (void) makePlacesArray;
 
 @end

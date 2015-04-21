@@ -12,8 +12,8 @@
 
 @interface MakeArrays : NSObject
 
-- (void) makeFirstArray;
-- (void) makeSecondArray;
+- (void) makeDrinksArray;
+- (void) makePlacesArray;
 
 @property (weak, nonatomic) id <MakeArraysDelegate> delegate;
 
@@ -23,12 +23,12 @@
 @protocol MakeArraysDelegate <NSObject>
 
 
-@optional
-
--(void) makesArraysGetFirstArrayReady : (MakeArrays *) makeArrays FirstArray: (NSMutableArray *) firstArray;
-
 @required
 
--(void) makesArraysGetSecondArrayReady : (MakeArrays *) makeArrays SecondArray: (NSMutableArray *) secondArray;
+-(void) makeArrayGetDrinksArrayReady : (MakeArrays *) makeArray DrinksArray: (NSMutableArray *) drinksArray;
+
+
+
+-(void) makeArrayGetPlacesArrayReady : (MakeArrays *) makeArray PlacesArray: (NSMutableArray *) placesArray;
 
 @end
